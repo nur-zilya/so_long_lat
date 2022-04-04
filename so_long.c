@@ -6,7 +6,7 @@
 /*   By: hfast <hfast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:44:20 by hfast             #+#    #+#             */
-/*   Updated: 2022/03/25 19:13:27 by hfast            ###   ########.fr       */
+/*   Updated: 2022/03/31 16:56:08 by hfast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-    t_game  game;
-    
+	t_game	game;
+
 	map_validation(argc, argv[1]);
 	game.mlx = mlx_init();
 	init_game(&game);
@@ -25,10 +25,11 @@ int	main(int argc, char **argv)
 	check_walls(&game);
 	check_counts(&game);
 	game.window = mlx_new_window(game.mlx, game.x * 110, \
-	 	game.y * 110, "so_long");
-    init_image(&game);
+		game.y * 110, "so_long");
+	init_image(&game);
 	write_map(&game);
 	mlx_hook(game.window, 17, 0, game_over, &game);
 	mlx_hook(game.window, 2, (1L << 0), hot_keys, &game);
+	mlx_loop_hook(game.mlx, update, (void *)&game);
 	mlx_loop(game.mlx);
 }

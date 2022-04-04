@@ -6,7 +6,7 @@
 /*   By: hfast <hfast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 15:08:02 by hfast             #+#    #+#             */
-/*   Updated: 2022/03/25 15:12:18 by hfast            ###   ########.fr       */
+/*   Updated: 2022/03/31 16:54:06 by hfast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	check_char(char c, t_game *game)
 {
-	if (c != 'P' && c != 'E' && c != 'C' && c != '0' && c != '1')
+	if (c != 'P' && c != 'E' && c != 'C' && c != '0' && c != '1' && c != 'V')
 	{
 		fullfree(game);
 		error("Character is not valid\n");

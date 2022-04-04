@@ -6,7 +6,7 @@
 /*   By: hfast <hfast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:47:02 by hfast             #+#    #+#             */
-/*   Updated: 2022/03/26 19:00:22 by hfast            ###   ########.fr       */
+/*   Updated: 2022/03/31 16:57:45 by hfast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	init_game(t_game *game)
 	game->collect = 0;
 	game->steps = 0;
 	game->win = 0;
+	game->anim = 0;
 }
 
 void	init_image(t_game *game)
@@ -31,16 +32,22 @@ void	init_image(t_game *game)
 	game->back = mlx_xpm_file_to_image(game->mlx,
 			"pict/Bg.xpm",
 			&game->h, &game->y);
-    game->exit_i = mlx_xpm_file_to_image(game->mlx,
+	game->exit_i = mlx_xpm_file_to_image(game->mlx,
 			"pict/door.xpm",
 			&game->h, &game->y);
-    game->collectib = mlx_xpm_file_to_image(game->mlx,
+	game->collectib = mlx_xpm_file_to_image(game->mlx,
 			"pict/crystal.xpm",
 			&game->h, &game->y);
-    game->hero_i = mlx_xpm_file_to_image(game->mlx,
+	game->hero_i = mlx_xpm_file_to_image(game->mlx,
 			"pict/fox.xpm",
 			&game->h, &game->y);
 	game->hero_left = mlx_xpm_file_to_image(game->mlx,
 			"pict/fox_left.xpm",
+			&game->h, &game->y);
+	game->enemy_0 = mlx_xpm_file_to_image(game->mlx,
+			"pict/enemy_0.xpm",
+			&game->h, &game->y);
+	game->enemy_1 = mlx_xpm_file_to_image(game->mlx,
+			"pict/enemy_1.xpm",
 			&game->h, &game->y);
 }

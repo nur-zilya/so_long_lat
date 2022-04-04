@@ -6,7 +6,7 @@
 #    By: hfast <hfast@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 17:22:57 by hirebbec          #+#    #+#              #
-#    Updated: 2022/03/25 19:11:43 by hfast            ###   ########.fr        #
+#    Updated: 2022/03/31 15:42:12 by hfast            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 FILES = so_long.c map_valid.c init.c read_map.c split.c utils.c check_map.c \
-			parsing.c write_map.c game_over.c keys.c itoa.c
+			parsing.c write_map.c game_over.c keys.c itoa.c animation.c
 
 FILES_BONUS = 
 					

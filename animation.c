@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   animation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfast <hfast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 14:56:24 by hfast             #+#    #+#             */
-/*   Updated: 2022/04/01 14:44:35 by hfast            ###   ########.fr       */
+/*   Created: 2022/03/31 15:35:09 by hfast             #+#    #+#             */
+/*   Updated: 2022/03/31 18:00:29 by hfast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	error(char *message)
-{
-	printf(" Error\n    %s\n", message);
-	exit (1);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t		count;
-
-	count = 0;
-	while (str[count] != '\0')
-		count++;
-	return (count);
-}
-
-void	fullfree(t_game *game)
+int	update(t_game *game)
 {
 	int		i;
+	char	*s;
 
-	i = -1;
-	while (game->map[++i])
-	{
-		free(game->map[i]);
-		game->map[i] = NULL;
-	}
-	free(game->map);
-	game->map = NULL;
+	s = ft_itoa(game->steps);
+	i = 0;
+	write_map(game);
+	mlx_string_put(game->mlx, game->window, 3, 1, 0x4B0082, "Steps: ");
+	mlx_string_put(game->mlx, game->window, 65, 1, 0x4B0082, s);
+	return (1);
 }

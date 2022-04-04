@@ -6,19 +6,19 @@
 /*   By: hfast <hfast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:58:45 by hfast             #+#    #+#             */
-/*   Updated: 2022/03/25 19:34:58 by hfast            ###   ########.fr       */
+/*   Updated: 2022/03/31 16:57:20 by hfast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int    game_over(t_game *game)
+int	game_over(t_game *game)
 {
-    char    *s;
-    
-    fullfree(game);
-    s = "WIN!!!";
-    if (game->win == 1)
-        printf("%s", "WIN!!!");
-    exit(0);          
+	char	*s;
+
+	fullfree(game);
+	s = "WIN!!!";
+	if (game->win == 1)
+		printf("%s", "WIN!!!");
+	exit(0);
 }
